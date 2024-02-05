@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+import './style.css'
+import { Link } from 'react-router-dom'
 
 async function getPosts() {
-    const response = await fetch('http://localhost:3001/json/posts.json')
+    const response = await fetch('http://localhost:3000/json/posts.json')
     return await response.json()
 }
 
@@ -20,9 +22,11 @@ const PostsList = () => {
     return (
         <section>
             {posts.map((post, index) => 
-                <div key={index}>
+                <div key={index} className='container-blog'>
                     <img src={post.image} alt="" />
+                    <Link to={`/post/${post.id}`}>
                     <h2>{post.title}</h2>
+                    </Link>
                 </div>
             )}
         </section>
