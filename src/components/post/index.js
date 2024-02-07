@@ -23,6 +23,7 @@ const PostDetails = () => {
 
     return (
         <section>
+            <Link to='/'>Voltar ao inicio</Link>
             <div className='container-blog post'>
                 <div className='content'>
                     <h2>{post.title}</h2>
@@ -30,7 +31,6 @@ const PostDetails = () => {
                 </div>
                 <img src={post.image} alt={post.title} />
             </div>
-            <Link to='/'>Voltar ao inicio</Link>
         </section>
     )
 }
